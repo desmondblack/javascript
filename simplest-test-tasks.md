@@ -1,14 +1,16 @@
-"use strict";
+```"use strict";
 let user = 'John';
 let age = 25;
 let message = 'Hello';
-
-
+```
+```
 let str = "hello";
 let str2 = 'test 2';
 let phrase = `${str} world`;
 let isGreater = true;
+```
 
+```
 alert( typeof isGreater ); // true (результатом сравнения будет "да")
 let result = prompt(232,'');
 alert(`вы ввели ${result}`)
@@ -19,13 +21,16 @@ confirm("azaza")
 String();
 Boolean();
 Number();
+```
 
-
+```
  let a = 1;
  let b = 5;
  let result = a+b<4 ? "Мало" : "много";
  alert(result);
+```
 
+```
 let hour = 9;
 if (hour < 10 || hour > 18) 
 {
@@ -39,11 +44,11 @@ for (let i = 0; i < 100; i++) {
   chet ++;
 }
 sum = sum + `количество чётных: ${chet}`;
-
 alert(sum);
+```
 
 
-
+```
 function pow(a,b)
 {
   let chislo = a;
@@ -61,16 +66,17 @@ function pow(x,n)
   return x**n;
 }
 alert(pow(5,3))
+```
 
-
-
+```
 let ask = (question, yes, no) => (confirm(question)) ? yes(): no();
   
   ask("Are you agree?", 
   () => alert("You are agree"),
   () => alert("You are disagree"),
   );
-
+```
+```
 function showPrimes(n) 
 {
     nextPrime:
@@ -84,12 +90,17 @@ function showPrimes(n)
     }
 }
 showPrimes(15)
+```
 
+```
 let menu = {
   width: 200,
   height: 300,
   title: "My menu"
 };
+```
+
+```
 function multiplyNumeric(obj) 
 {
   for(let key in menu)  
@@ -118,7 +129,9 @@ let user = {
 }
 
 (user.go)() 
+```
 
+```
 
 let calculator = {
 a: +prompt("a",0),
@@ -191,8 +204,10 @@ function readNumber()
     }
 }
 alert(`Число ${readNumber()}`);
+```
 
 
+```
 function random(a,b)//random from a to b
 {
     return a+Math.random()*(b-a) 
@@ -228,9 +243,11 @@ function truncate(str,maxlen) // trucate for length 20
   return (str.length < 20) ? alert(str): alert(str.slice(0,(maxlen-1))+'...')// ... - is a 1 symbol
 }
 truncate("Эта строка будет содержать до 20 символов", 20)   
+```
 
-
-function createMarker(id)//this function used on my site: https://gameextream.polirek.by/ucp/pages/maps/index.php
+this function used on my site: https://gameextream.polirek.by/ucp/pages/maps/index.php
+```
+function createMarker(id)
 {
     let p_windows = new google.maps.InfoWindow({
         content: "<p>"+p_pos[id].name+" <b>(ID: "+id+")</b><br>Ping: "+p_pos[id].ping+"</p>"
@@ -246,3 +263,4 @@ function createMarker(id)//this function used on my site: https://gameextream.po
         p_windows.open(map,p_marker);
     });
 }
+```
