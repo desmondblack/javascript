@@ -1,46 +1,12 @@
 
 let test1 = ['M2', 'C', 'asc'];
 let test2 = ['P5', 'B', 'asc'];	
-let test3 = ['m2', 'Bb', 'dsc'];	//Bb
-let test4 = ['M3', 'Cb', 'dsc'];	
-let test5 = ['P4', 'G#', 'dsc'];	
-let test6 = ['m3', 'B', 'dsc'];
-let test7 = ['m2', 'Fb', 'asc'];
-let test8 = ['M2', 'E#', 'dsc'];
-let test9 = ['P4', 'E', 'dsc'];
-let test10 = ['m2', 'D#', 'asc'];
-let test11 = ['M7', 'G', 'asc'];
-//alert(intervalConstruction(test1))
-//alert(intervalConstruction(test2))
-// intervalConstruction(test3);
-// intervalConstruction(test4);
-// intervalConstruction(test5);
-// intervalConstruction(test6);
-// intervalConstruction(test7);
-// intervalConstruction(test8);
-// intervalConstruction(test9);
-// intervalConstruction(test10);
-// intervalConstruction(test11);
+intervalConstruction(test1);
+intervalConstruction(test2);
 let tes1 = ['C', 'D'];//	M2
 let tes2 = ['B', 'F#', 'asc'];//	P5
-let tes3 = ['Fb', 'Gbb'];//	m2
-let tes4 = ['G', 'F#', 'asc'];//	M7
-let tes5 = ['Bb', 'A', 'dsc'];//	m2
-let tes6 = ['Cb', 'Abb', 'dsc'];//	M3
-let tes7 = ['G#', 'D#', 'dsc'];//	P4
-let tes8 = ['E', 'B', 'dsc'];//	P4
-let tes9 = ['E#', 'D#', 'dsc'];//	M2
-let tes10 = ['B', 'G#', 'dsc'];//	m3
-alert(intervalIdentification(tes1))
-alert(intervalIdentification(tes2))
-// intervalIdentification(tes3);
-// intervalIdentification(tes4);
-// intervalIdentification(tes5);
-// intervalIdentification(tes6);
-// intervalIdentification(tes7);
-// intervalIdentification(tes8);
-// intervalIdentification(tes9);
-// intervalIdentification(tes10);
+intervalIdentification(tes1);
+intervalIdentification(tes2);
 function intervalConstruction(arr)
 {
     let interval = arr[0],
