@@ -1,12 +1,12 @@
 
 let test1 = ['M2', 'C', 'asc'];
 let test2 = ['P5', 'B', 'asc'];	
-intervalConstruction(test1);
-intervalConstruction(test2);
+//intervalConstruction(test1);
+//intervalConstruction(test2);
 let tes1 = ['C', 'D'];//	M2
 let tes2 = ['B', 'F#', 'asc'];//	P5
-intervalIdentification(tes1);
-intervalIdentification(tes2);
+//intervalIdentification(tes1);
+//intervalIdentification(tes2);
 function intervalConstruction(arr)
 {
     let interval = arr[0],
@@ -152,10 +152,16 @@ function intervalIdentification(arr)
     letterbid = 0,    
     count = 0;
     (ascending = '' || !ascending || ascending == 'asc') ? ascending = 1 : ascending = 0;    
+    if(intervala.length < 1 || intervala.length > 3 || intervalb.length < 1 || intervalb.length > 3) return ("Error: cannot identify the interval");
+    if(intervala[0] < 'A' || intervala[0] > 'G' || intervalb[0] < 'A' || intervalb[0] > 'G') return ("Error: cannot identify the interval");
+    if((intervala[1] && intervala[1] != '#' && intervala[1] != 'b') || (intervala[2] && intervala[2] != '#' && intervala[2] != 'b')) return ("Error: cannot identify the interval");    
+    if((intervalb[1] && intervalb[1] != '#' && intervalb[1] != 'b') || (intervalb[2] && intervalb[2] != '#' && intervalb[2] != 'b')) return ("Error: cannot identify the interval");        
+
     lettera = intervala.slice(0,1);
-    letterb = intervalb.slice(0,1);  
+    letterb = intervalb.slice(0,1); 
     (ascending == 1) ? letteraid = letnum(lettera) : letteraid = letnum(lettera);    
     (ascending == 1) ? letterbid = letnum(letterb) : letterbid = letnum(letterb);            
+   
     if(ascending == 1) degrees = letterbid-letteraid+1;
     else degrees = letteraid-letterbid+1;
     if(degrees <= 0) degrees += 7;
@@ -194,42 +200,50 @@ function takeintervalname(degrees,semitone)
 {
     switch(degrees)
     {
-        case 2: 
+        case 2:
         {
             if(semitone == 1)
                 return 'm2';
-            else 
+            else if(semitone == 2)
                 return 'M2';
-            break;       
-        }    
-        case 3: 
+        }
+        case 3:  
         {
             if(semitone == 3)
                 return 'm3';
-            else
+            else if(semitone == 4)
                 return 'M3';
-            break;        
-        }
-        case 4: return 'P4'; break;
-        case 5: return 'P5'; break;
-        case 6: 
+        }      
+        case 4:  
+        {
+            if(semitone == 5)
+                return 'P4';
+        }     
+        case 5:  
+        {
+            if(semitone == 7)
+                return 'P5';
+        }  
+        case 6:  
         {
             if(semitone == 8)
                 return 'm6';
-            else
-                return 'M6';    
-            break;            
-        }
-        case 7: 
+            else if(semitone == 9)
+                return 'M6';
+        }    
+        case 7:  
         {
             if(semitone == 10)
                 return 'm7';
-            else    
+            else if(semitone == 11)
                 return 'M7';
-            break;        
-        }
-        case 8: return 'P8'; break;
-        default: return("Cannot identify the interval");                                                        
-    }
+        }         
+        case 8:  
+        {
+            if(semitone == 12)
+                return 'P8';
+        } 
+        default: return("Cannot identify the interval");              
+    }                                               
 }
-   
+
