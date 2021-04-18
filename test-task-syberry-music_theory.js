@@ -229,7 +229,7 @@ function takeintervalname(degrees,semitone)
             break;        
         }
         case 8: return 'P8'; break;
-        default: return("Error: interval not supported");                                                        
+        default: return("Cannot identify the interval");                                                        
     }
 }
    
