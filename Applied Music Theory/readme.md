@@ -34,7 +34,7 @@ Then you have to count the number of semitones from the starting note. In C D E 
 Here one dash means one semitone:
 C--D--E-F--G--A--B-C
 
-Example
+##Example
 Let's count the number of semitones between C and G: C to D - 2 semitones, D to E - 2 semitones, E to F - 1 semitone, F to G - 2 semitones. 2 + 2 + 1 + 2 = 7 semitones.
 Now let's find the number of semitones between A and C: A to B - 2 semitones, B to C - 1 semitone. 2 + 1 = 3 semitones.
 
