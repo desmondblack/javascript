@@ -34,11 +34,11 @@ Then you have to count the number of semitones from the starting note. In C D E 
 Here one dash means one semitone:
 C--D--E-F--G--A--B-C
 
-##Example
+## Example
 Let's count the number of semitones between C and G: C to D - 2 semitones, D to E - 2 semitones, E to F - 1 semitone, F to G - 2 semitones. 2 + 2 + 1 + 2 = 7 semitones.
 Now let's find the number of semitones between A and C: A to B - 2 semitones, B to C - 1 semitone. 2 + 1 = 3 semitones.
 
-Example
+## Example
 Now let's find our first interval - P5 (perfect fifth) from Ab. P5 means: find a distance of 5 degrees and 7 semitones.
 First, find the 5th degree from A, ignoring 'b':
 (A B C D E) - E is the 5th-degree note from A.
@@ -46,19 +46,19 @@ Now count semitones: from Ab to B - 3 semitones (from Ab to A - 1 semitone, from
 At P5 distance from Ab is the note Eb.
 Note: you can't write D# as an answer, because even if D# is 7 semitones from Ab, it has a different degree (it takes only 4 degrees from A to D).
 
-Example
+## Example
 To show you how to work with accidentals, let's find P5 (5th degree, 7 semitones) from A#:
 As in a previous example, find the 5th degree from A, ignoring '#':
 (A B C D E) - E is the 5th note from A (and from A#).
 Now count semitones: from A# to B - 1 semitone, from B to C - 1 semitone, from C to D - 2 semitones, from D to E - 2 semitones. 1 + 1 + 2 + 2 = 6 semitones. We need to add just one semitone by adding #: E#
 At P5 distance from A# is the note E#.
 
-Example
+## Example
 Let's find m2 (2nd degree, 1 semitone) from Fb: To find a second degree is easy: (F G) - G is the second note from F.
 Now count semitones: from Fb to G is 3 semitones. This is way too much, we need just one. SO we have to lower G by 2 semitones. To do so, add two flat 'b' signs to G note: Gbb.
 At m2 distance from Fb is the note Gbb.
 
-Intervals names, quality, and quantity
+## Intervals names, quality, and quantity
 m2 - Minor Second - 1 semitone, 2 degrees
 M2 - Major Second - 2 semitones, 2 degrees
 m3 - Minor Third - 3 semitones, 3 degrees
@@ -73,8 +73,8 @@ P8 - Perfect Octave - 12 semitones, 8 degrees
 
 Your task is to implement two functions that'll work with intervals: one will construct an interval and the second will identify the interval.
 
-Requirements:
-intervalConstruction
+### Requirements:
+## intervalConstruction
 
 The function 'intervalConstruction' must take an array of strings as input and return a string.
 An array contains three or two elements.
@@ -86,7 +86,7 @@ Cbb Cb C C# C## Dbb Db D D# D## Ebb Eb E E# E## Fbb Fb F F# F## Gbb Gb G G# G## 
 If there are more or fewer elements in the input array, an exception should be thrown: "Illegal number of elements in input array"
 Convention: ['a', 'b'] here means an array of strings
 
-Input examples and meaning:
+## Input examples and meaning:
 Please note: The data your function will get will look like an array of strings as defined in your language. No additional parsing is needed! The form ['', ''] is just a convention!
 The following notes are allowed in input:
 Cb C C# Db D D# Eb E E# Fb F F# Gb G G# Ab A A# Bb B B#
@@ -98,7 +98,7 @@ m2 M2 m3 M3 P4 P5 m6 M6 m7 M7 P8
 ['P5', 'C'] - build an ascending P5 interval starting from C
 ['P4', 'E#'] - build an ascending P4 interval starting from E#
 
-intervalIdentification
+## intervalIdentification
 
 The function 'intervalIdentification' must take an array of strings as input and return a string.
 An array contains three or two elements.
@@ -110,7 +110,7 @@ m2 M2 m3 M3 P4 P5 m6 M6 m7 M7 P8
 If the interval does not fit a description, an exception should be thrown: "Cannot identify the interval".
 Convention: ['a', 'b'] here means an array of strings
 
-Input examples and meaning:
+## Input examples and meaning:
 Please note: The data your function will get will look like an array of strings as defined in your language. No additional parsing is needed! The form ['', ''] is just a convention!
 The following notes are allowed in input:
 Cbb Cb C C# C## Dbb Db D D# D## Ebb Eb E E# E## Fbb Fb F F# F## Gbb Gb G G# G## Abb Ab A A# A## Bbb Bb B B# B##
