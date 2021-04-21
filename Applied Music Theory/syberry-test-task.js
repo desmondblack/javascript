@@ -30,7 +30,6 @@ function intervalConstruction(arr)
     if(note.length < 1 || note.length > 3) return ("Error: cannot identify the interval");
     if(note[0] < 'A' || note[0] > 'G') return ("Error: cannot identify the interval");
     if((note[1] && note[1] != '#' && note[1] != 'b') || (note[2] && note[2] != '#' && note[2] != 'b')) return ("Error: cannot identify the interval");
-    if() return ("Error: cannot identify the interval");
 
     (ascending == 1) ? letterid = letnum(letter)+degrees-1 : letterid = letnum(letter)-degrees+1;
     oldletterid = letnum(letter);
