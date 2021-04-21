@@ -72,7 +72,7 @@ function intervalConstruction(arr)
 }
 
 
-function letnum(let)        
+function letnum(let) // convert letter position. example: A = 0 and 0 = A        
 {
   let arr = ['A','B','C','D','E','F','G'];
   if(isFinite(let)) // let is number
@@ -82,39 +82,24 @@ function letnum(let)
 }
 
 
-function distance(a,ascending=1)
-{
-    switch(a)
-    {
-        case 'A': return 2; break;
-        case 'B': 
-        {
-            if(ascending == 1) return 1;
-            else return 2;
-            break;
-        }  
-        case 'C': 
-        {
-            if(ascending == 1) return 2;
-            else return 1;
-            break;
-        }                
-        case 'D': return 2; break;
-        case 'E': 
-        {
-            if(ascending == 1) return 1;
-            else return 2;
-            break;
-        } 
-        case 'F': 
-        {
-            if(ascending == 1) return 2;
-            else return 1;
-            break;
-        }          
-        case 'G': return 2; break;   
-    }
-}
+function distance(a,ascending=1)//here is a distance ('-') between letters. example: --B- asc = 1, dsc = 2. C--D--E-F--G--A--B-C
+  {
+    let arr = [
+      {id: 'A', asc: 2, dsc:2},
+      {id: 'B', asc: 1, dsc:2},
+      {id: 'C', asc: 2, dsc:1},
+      {id: 'D', asc: 2, dsc:2},
+      {id: 'E', asc: 1, dsc:2},
+      {id: 'F', asc: 2, dsc:1},
+      {id: 'G', asc: 2, dsc:2},
+    ];
+    let result = arr.find(item => item.id == a);
+    
+    if(ascending == 1) 
+        return result.asc
+  else 
+        return result.dsc
+  }
 
 function intervalIdentification(arr) 
 {
