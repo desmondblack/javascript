@@ -34,10 +34,11 @@ function intervalConstruction(arr)
 
     (ascending == 1) ? letterid = letnum(letter)+degrees-1 : letterid = letnum(letter)-degrees+1;
     oldletterid = letnum(letter);
-
-    while((letterid > 7 && ascending == 1) || (letterid < 0 && ascending == 0))   {
-        (ascending == 1) ? letterid -= 7 : letterid += 7; } 
-
+    while((letterid > 6 && ascending == 1) || (letterid < 0 && ascending == 0))  
+    {
+      (ascending == 1) ? letterid -= 7 : letterid += 7; 
+    } 
+    
     for (let char of note) 
     {
       if(char == '#')  
@@ -46,7 +47,8 @@ function intervalConstruction(arr)
         (ascending == 1) ? count += 1 : count -= 1;       
     }      
 
-    while(true)     {
+    while(true)     
+    {
         count += distance(letnum(oldletterid),ascending);   
         (ascending == 1) ? oldletterid++ : oldletterid--;
         if(oldletterid > 6 && ascending == 1)    
@@ -54,7 +56,8 @@ function intervalConstruction(arr)
         else if(oldletterid < 0 && ascending == 0)        
             oldletterid = 6;     
         if(oldletterid == letterid)     
-            break;       }
+            break;       
+    }
     if(semitone == count) 
         return (letnum(letterid));
     else if(count-semitone == 1) 
@@ -62,13 +65,13 @@ function intervalConstruction(arr)
         else return(letnum(letterid)+"#");
     else if(count-semitone == 2) 
         if(ascending == 1) return(letnum(letterid)+"bb") 
-        else return(letnum(letterid)+"##") ;      
+        else return(letnum(letterid)+"##");      
     else if(semitone-count == 1) 
         if(ascending == 1) return(letnum(letterid)+"#") 
-        else return(letnum(letterid)+"b") ;     
+        else return(letnum(letterid)+"b");     
     else if(semitone-count == 2) 
         if(ascending == 1) return(letnum(letterid)+"##") 
-        else return(letnum(letterid)+"bb") ;
+        else return(letnum(letterid)+"bb");
 }
 
 function intervalIdentification(arr) 
