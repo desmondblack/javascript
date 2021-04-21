@@ -25,7 +25,7 @@ function intervalConstruction(arr)
         case 'P8': semitone = 12, degrees = 8; break;
         default: return ("Error: interval not supported");                                                        
     }
-    letter = note.slice(0,1);
+    letter = note[0];
 
     if(note.length < 1 || note.length > 3) return ("Error: cannot identify the interval");
     if(note[0] < 'A' || note[0] > 'G') return ("Error: cannot identify the interval");
