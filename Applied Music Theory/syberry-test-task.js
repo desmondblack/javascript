@@ -88,10 +88,10 @@ function intervalIdentification(arr)
     if((intervala[1] && intervala[1] != '#' && intervala[1] != 'b') || (intervala[2] && intervala[2] != '#' && intervala[2] != 'b')) return ("Error: cannot identify the interval");    
     if((intervalb[1] && intervalb[1] != '#' && intervalb[1] != 'b') || (intervalb[2] && intervalb[2] != '#' && intervalb[2] != 'b')) return ("Error: cannot identify the interval");        
 
-    lettera = intervala.slice(0,1);
-    letterb = intervalb.slice(0,1); 
-    (ascending == 1) ? letteraid = letnum(lettera) : letteraid = letnum(lettera);    
-    (ascending == 1) ? letterbid = letnum(letterb) : letterbid = letnum(letterb);            
+    lettera = intervala[0];
+    letterb = intervalb[0]; 
+    letteraid = letnum(lettera);
+    letterbid = letnum(letterb);
    
     if(ascending == 1) degrees = letterbid-letteraid+1;
     else degrees = letteraid-letterbid+1;
@@ -219,3 +219,6 @@ function distance(a,ascending=1)//here is a distance ('-') between letters. exam
 // console.log(intervalIdentification(test19));
 // console.log(intervalIdentification(test20));
 // console.log(intervalIdentification(test21));
+
+
+
