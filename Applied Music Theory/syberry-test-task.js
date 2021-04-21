@@ -71,36 +71,6 @@ function intervalConstruction(arr)
         else return(letnum(letterid)+"bb") ;
 }
 
-
-function letnum(let) // convert letter position. example: A = 0 and 0 = A        
-{
-  let arr = ['A','B','C','D','E','F','G'];
-  if(isFinite(let)) // let is number
-    return arr[let];
-  else  //if 'let' is string
-    return arr.indexOf(let);
-}
-
-
-function distance(a,ascending=1)//here is a distance ('-') between letters. example: --B- asc = 1, dsc = 2. C--D--E-F--G--A--B-C
-  {
-    let arr = [
-      {id: 'A', asc: 2, dsc:2},
-      {id: 'B', asc: 1, dsc:2},
-      {id: 'C', asc: 2, dsc:1},
-      {id: 'D', asc: 2, dsc:2},
-      {id: 'E', asc: 1, dsc:2},
-      {id: 'F', asc: 2, dsc:1},
-      {id: 'G', asc: 2, dsc:2},
-    ];
-    let result = arr.find(item => item.id == a);
-    
-    if(ascending == 1) 
-        return result.asc
-  else 
-        return result.dsc
-  }
-
 function intervalIdentification(arr) 
 {
     let intervala = arr[0],
@@ -156,57 +126,55 @@ function intervalIdentification(arr)
 }
 
 function takeintervalname(degrees,semitone)
+  {
+    let arr = [
+      {name: 'm2', semitone: 1, degrees: 2},
+      {name: 'M2', semitone: 2, degrees: 2},
+      {name: 'm3', semitone: 3, degrees: 3},
+      {name: 'M3', semitone: 4, degrees: 3},
+      {name: 'P4', semitone: 5, degrees: 4},
+      {name: 'P5', semitone: 7, degrees: 5},
+      {name: 'm6', semitone: 8, degrees: 6},
+      {name: 'M6', semitone: 9, degrees: 6},                                          
+      {name: 'm7', semitone: 10, degrees: 7},                                          
+      {name: 'M7', semitone: 11, degrees: 7},                                                      
+      {name: 'P8', semitone: 12, degrees: 8},
+    ];    
+    let result = arr.find(item => item.semitone == semitone && item.degrees == degrees);
+    if(!result) 
+      return ("Error: interval not supported");    
+    else 
+      return result.name; 
+  }
+
+function letnum(let) // convert letter position. example: A = 0 and 0 = A        
 {
-    switch(degrees)
-    {
-        case 2:
-        {
-            if(semitone == 1)
-                return 'm2';
-            else if(semitone == 2)
-                return 'M2';
-        }
-        case 3:  
-        {
-            if(semitone == 3)
-                return 'm3';
-            else if(semitone == 4)
-                return 'M3';
-        }      
-        case 4:  
-        {
-            if(semitone == 5)
-                return 'P4';
-        }     
-        case 5:  
-        {
-            if(semitone == 7)
-                return 'P5';
-        }  
-        case 6:  
-        {
-            if(semitone == 8)
-                return 'm6';
-            else if(semitone == 9)
-                return 'M6';
-        }    
-        case 7:  
-        {
-            if(semitone == 10)
-                return 'm7';
-            else if(semitone == 11)
-                return 'M7';
-        }         
-        case 8:  
-        {
-            if(semitone == 12)
-                return 'P8';
-        } 
-        default: return("Cannot identify the interval");              
-    }                                               
+  let arr = ['A','B','C','D','E','F','G'];
+  if(isFinite(let)) // let is number
+    return arr[let];
+  else  //if 'let' is string
+    return arr.indexOf(let);
 }
 
 
+function distance(a,ascending=1)//here is a distance ('-') between letters. example: --B- asc = 1, dsc = 2. C--D--E-F--G--A--B-C
+  {
+    let arr = [
+      {id: 'A', asc: 2, dsc:2},
+      {id: 'B', asc: 1, dsc:2},
+      {id: 'C', asc: 2, dsc:1},
+      {id: 'D', asc: 2, dsc:2},
+      {id: 'E', asc: 1, dsc:2},
+      {id: 'F', asc: 2, dsc:1},
+      {id: 'G', asc: 2, dsc:2},
+    ];
+    let result = arr.find(item => item.id == a);
+    
+    if(ascending == 1) 
+        return result.asc
+  else 
+        return result.dsc
+  }
 // let test1 = ['M2', 'C', 'asc'];//	D
 // let test2 = ['P5', 'B', 'asc'];//	F#
 // let test3 = ['m2', 'Bb', 'dsc'];//	A
