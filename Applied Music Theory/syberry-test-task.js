@@ -1,12 +1,3 @@
-
-let test1 = ['M2', 'C', 'asc'];
-let test2 = ['P5', 'B', 'asc'];	
-//intervalConstruction(test1);
-//intervalConstruction(test2);
-let tes1 = ['C', 'D'];//	M2
-let tes2 = ['B', 'F#', 'asc'];//	P5
-//intervalIdentification(tes1);
-//intervalIdentification(tes2);
 function intervalConstruction(arr)
 {
     let interval = arr[0],
@@ -47,10 +38,13 @@ function intervalConstruction(arr)
     while((letterid > 7 && ascending == 1) || (letterid < 0 && ascending == 0))   {
         (ascending == 1) ? letterid -= 7 : letterid += 7; } 
 
-        if(note[1] == '#') 
-            (ascending == 1) ? count -= 1 : count += 1;
-        if(note[1] == 'b') 
-            (ascending == 1) ? count += 1 : count -= 1;       
+    for (let char of note) 
+    {
+      if(char == '#')  
+        (ascending == 1) ? count -= 1 : count += 1;
+      else if(char == 'b')
+        (ascending == 1) ? count += 1 : count -= 1;       
+    }      
 
     while(true)     {
         count += distance(letnum(oldletterid),ascending);   
@@ -147,23 +141,21 @@ function intervalIdentification(arr)
     if(ascending == 1) degrees = letterbid-letteraid+1;
     else degrees = letteraid-letterbid+1;
     if(degrees <= 0) degrees += 7;
-    if(intervala[1] == '#') 
+    for (let char of intervala) 
+    {
+      if(char == '#')  
         (ascending == 1) ? count -= 1 : count += 1;
-    if(intervala[1] == 'b') 
-        (ascending == 1) ? count += 1 : count -= 1;     
-    if(intervala[2] == '#') 
-        (ascending == 1) ? count -= 1 : count += 1;
-    if(intervala[2] == 'b') 
-        (ascending == 1) ? count += 1 : count -= 1;   
-    if(intervalb[1] == '#') 
+      else if(char == 'b')
+        (ascending == 1) ? count += 1 : count -= 1;       
+    }      
+    for (let char of intervalb) 
+    {
+      if(char == '#')  
         (ascending == 1) ? count += 1 : count -= 1;
-    if(intervalb[1] == 'b') 
-        (ascending == 1) ? count -= 1 : count += 1;     
-    if(intervalb[2] == '#') 
-        (ascending == 1) ? count += 1 : count -= 1;
-    if(intervalb[2] == 'b') 
-        (ascending == 1) ? count -= 1 : count += 1;     
-
+      else if(char == 'b')
+        (ascending == 1) ? count -= 1 : count += 1;       
+    }     
+    
     while(true)     
     {
         count += distance(letnum(letteraid),ascending);   
@@ -228,3 +220,49 @@ function takeintervalname(degrees,semitone)
         default: return("Cannot identify the interval");              
     }                                               
 }
+
+
+// let test1 = ['M2', 'C', 'asc'];//	D
+// let test2 = ['P5', 'B', 'asc'];//	F#
+// let test3 = ['m2', 'Bb', 'dsc'];//	A
+// let test4 = ['M3', 'Cb', 'dsc'];//	Abb
+// let test5 = ['P4', 'G#', 'dsc'];//	D#
+// let test6 = ['m3', 'B', 'dsc'];//	G#
+// let test7 = ['m2', 'Fb', 'asc'];//	Gbb
+// let test8 = ['M2', 'E#', 'dsc'];//	D#
+// let test9 = ['P4', 'E', 'dsc'];//	B
+// let test10 = ['m2', 'D#', 'asc'];//	E
+// let test11 = ['M7', 'G', 'asc'];//	F#
+
+// let test12 = ['C', 'D'];// M2
+// let test13 = ['B', 'F#', 'asc'];// 	P5
+// let test14 = ['Fb', 'Gbb'];// 	m2
+// let test15 = ['G', 'F#', 'asc'];// 	M7
+// let test16 = ['Bb', 'A', 'dsc'];// 	m2
+// let test17 = ['Cb', 'Abb', 'dsc'];// 	M3
+// let test18 = ['G#', 'D#', 'dsc'];// 	P4
+// let test19 = ['E', 'B', 'dsc'];// 	P4
+// let test20 = ['E#', 'D#', 'dsc'];// 	M2
+// let test21 = ['B', 'G#', 'dsc'];// 	m3
+
+// console.log(intervalConstruction(test1)); 
+// console.log(intervalConstruction(test2)); 
+// console.log(intervalConstruction(test3)); 
+// console.log(intervalConstruction(test4)); 
+// console.log(intervalConstruction(test5)); 
+// console.log(intervalConstruction(test6)); 
+// console.log(intervalConstruction(test7)); 
+// console.log(intervalConstruction(test8)); 
+// console.log(intervalConstruction(test9)); 
+// console.log(intervalConstruction(test10)); 
+// console.log(intervalConstruction(test11)); 
+// console.log(intervalIdentification(test12));
+// console.log(intervalIdentification(test13));
+// console.log(intervalIdentification(test14));
+// console.log(intervalIdentification(test15));
+// console.log(intervalIdentification(test16));
+// console.log(intervalIdentification(test17));
+// console.log(intervalIdentification(test18));
+// console.log(intervalIdentification(test19));
+// console.log(intervalIdentification(test20));
+// console.log(intervalIdentification(test21));
