@@ -53,7 +53,7 @@ function intervalConstruction(arr)
             (ascending == 1) ? count += 1 : count -= 1;       
 
     while(true)     {
-        count += distance(takelet(oldletterid),ascending);   
+        count += distance(letnum(oldletterid),ascending);   
         (ascending == 1) ? oldletterid++ : oldletterid--;
         if(oldletterid > 6 && ascending == 1)    
             oldletterid = 0;    
@@ -62,47 +62,29 @@ function intervalConstruction(arr)
         if(oldletterid == letterid)     
             break;       }
     if(semitone == count) 
-        return (takelet(letterid));
+        return (letnum(letterid));
     else if(count-semitone == 1) 
-        if(ascending == 1) return(takelet(letterid)+"b");
-        else return(takelet(letterid)+"#");
+        if(ascending == 1) return(letnum(letterid)+"b");
+        else return(letnum(letterid)+"#");
     else if(count-semitone == 2) 
-        if(ascending == 1) return(takelet(letterid)+"bb") 
-        else return(takelet(letterid)+"##") ;      
+        if(ascending == 1) return(letnum(letterid)+"bb") 
+        else return(letnum(letterid)+"##") ;      
     else if(semitone-count == 1) 
-        if(ascending == 1) return(takelet(letterid)+"#") 
-        else return(takelet(letterid)+"b") ;     
+        if(ascending == 1) return(letnum(letterid)+"#") 
+        else return(letnum(letterid)+"b") ;     
     else if(semitone-count == 2) 
-        if(ascending == 1) return(takelet(letterid)+"##") 
-        else return(takelet(letterid)+"bb") ;
+        if(ascending == 1) return(letnum(letterid)+"##") 
+        else return(letnum(letterid)+"bb") ;
 }
 
 
 function letnum(let)        
 {
-    switch(let)
-    {
-        case 'A': return 0; break;
-        case 'B': return 1; break;
-        case 'C': return 2; break;
-        case 'D': return 3; break;
-        case 'E': return 4; break;
-        case 'F': return 5; break;    
-        case 'G': return 6; break;    
-    }
-}
-function takelet(let)
-{
-    switch(let)
-    {
-        case 0: return 'A'; break;
-        case 1: return 'B'; break;
-        case 2: return 'C'; break;
-        case 3: return 'D'; break;
-        case 4: return 'E'; break;
-        case 5: return 'F'; break;    
-        case 6: return 'G'; break;    
-    }
+  let arr = ['A','B','C','D','E','F','G'];
+  if(isFinite(let)) // let is number
+    return arr[let];
+  else  //if 'let' is string
+    return arr.indexOf(let);
 }
 
 
@@ -184,7 +166,7 @@ function intervalIdentification(arr)
 
     while(true)     
     {
-        count += distance(takelet(letteraid),ascending);   
+        count += distance(letnum(letteraid),ascending);   
         (ascending == 1) ? letteraid++ : letteraid--;
         if(letteraid > 6 && ascending == 1)    
             letteraid = 0;    
@@ -246,4 +228,3 @@ function takeintervalname(degrees,semitone)
         default: return("Cannot identify the interval");              
     }                                               
 }
-
