@@ -135,7 +135,7 @@ function intervalIdentification(arr)
         if(letteraid == letterbid)     
             break;       
     }
-    let result = intervalnames.find(item => item.semitone == semitone && item.degrees == degrees);
+    let result = intervalnames.find(item => item.semitone == count && item.degrees == degrees);
     if(!result) 
       return ("Error: interval not supported");    
     else 
