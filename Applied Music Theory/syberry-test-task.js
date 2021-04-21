@@ -175,6 +175,9 @@ function distance(a,ascending=1)//here is a distance ('-') between letters. exam
   else 
         return result.dsc
   }
+
+
+
 // let test1 = ['M2', 'C', 'asc'];//	D
 // let test2 = ['P5', 'B', 'asc'];//	F#
 // let test3 = ['m2', 'Bb', 'dsc'];//	A
@@ -198,27 +201,24 @@ function distance(a,ascending=1)//here is a distance ('-') between letters. exam
 // let test20 = ['E#', 'D#', 'dsc'];// 	M2
 // let test21 = ['B', 'G#', 'dsc'];// 	m3
 
-// console.log(intervalConstruction(test1)); 
-// console.log(intervalConstruction(test2)); 
-// console.log(intervalConstruction(test3)); 
-// console.log(intervalConstruction(test4)); 
-// console.log(intervalConstruction(test5)); 
-// console.log(intervalConstruction(test6)); 
-// console.log(intervalConstruction(test7)); 
-// console.log(intervalConstruction(test8)); 
-// console.log(intervalConstruction(test9)); 
-// console.log(intervalConstruction(test10)); 
-// console.log(intervalConstruction(test11)); 
-// console.log(intervalIdentification(test12));
-// console.log(intervalIdentification(test13));
-// console.log(intervalIdentification(test14));
-// console.log(intervalIdentification(test15));
-// console.log(intervalIdentification(test16));
-// console.log(intervalIdentification(test17));
-// console.log(intervalIdentification(test18));
-// console.log(intervalIdentification(test19));
-// console.log(intervalIdentification(test20));
-// console.log(intervalIdentification(test21));
-
-
-
+// console.log(intervalConstruction(test1)+'/D'); // function return/true test data
+// console.log(intervalConstruction(test2)+'/F#'); 
+// console.log(intervalConstruction(test3)+'/A'); 
+// console.log(intervalConstruction(test4)+'/Abb'); 
+// console.log(intervalConstruction(test5)+'/D#'); 
+// console.log(intervalConstruction(test6)+'/G#'); 
+// console.log(intervalConstruction(test7)+'/Gbb'); 
+// console.log(intervalConstruction(test8)+'/D#'); 
+// console.log(intervalConstruction(test9)+'/B'); 
+// console.log(intervalConstruction(test10)+'/E'); 
+// console.log(intervalConstruction(test11)+'/F#'); 
+// console.log(intervalIdentification(test12)+'/M2');
+// console.log(intervalIdentification(test13)+'/P5');
+// console.log(intervalIdentification(test14)+'/m2');
+// console.log(intervalIdentification(test15)+'/M7');
+// console.log(intervalIdentification(test16)+'/m2');
+// console.log(intervalIdentification(test17)+'/M3');
+// console.log(intervalIdentification(test18)+'/P4');
+// console.log(intervalIdentification(test19)+'/P4');
+// console.log(intervalIdentification(test20)+'/M2');
+// console.log(intervalIdentification(test21)+'/m3');
