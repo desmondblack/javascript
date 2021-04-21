@@ -116,5 +116,7 @@ The following notes are allowed in input:
 Cbb Cb C C# C## Dbb Db D D# D## Ebb Eb E E# E## Fbb Fb F F# F## Gbb Gb G G# G## Abb Ab A A# A## Bbb Bb B B# B##
 
 ['C', 'D'] - find an ascending interval between C and D
+
 ['C#', 'Fb'] - find an ascending interval between C# and Fb
+
 ['A', 'G#', 'asc'] - find an ascending interval between A and G#
