@@ -14,10 +14,10 @@ let isGreater = true;
 alert( typeof isGreater ); 
 let result = prompt(232,'');
 alert(`вы ввели ${result}`)
-let result = confirm("azaza");
+let result = confirm("test");
 alert("messaf");
 prompt(message,1);
-confirm("azaza")
+confirm("test1")
 String();
 Boolean();
 Number();
